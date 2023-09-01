@@ -1,5 +1,4 @@
 {
-  "private": true,
   "displayName": "HTTP JSON thermometer",
   "name": "homebridge-http-json-thermometer",
   "version": "1.0.0",
