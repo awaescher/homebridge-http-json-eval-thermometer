@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "HttpJsonThermometer",
   "pluginType": "platform",
   "singular": true,
   "schema": {
