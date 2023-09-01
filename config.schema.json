@@ -1,15 +1,69 @@
 {
   "pluginAlias": "HttpJsonThermometer",
   "pluginType": "platform",
-  "singular": true,
+  "singular": false,
+  "headerDisplay": "Thermometers are exposed to HomeKit as separate accessories.",
   "schema": {
     "type": "object",
     "properties": {
-      "name": {
-        "title": "Name",
-        "type": "string",
-        "required": true,
-        "default": "Example Dynamic Platform"
+      "thermometers": {
+        "title": "Thermometers",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "thermometerName": {
+              "title": "Name of your thermometer",
+              "type": "string",
+              "default": "Terrarium thermometer",
+              "description": "This will be the name of your thermometer. This must be unique."
+            },
+            "httpRoute": {
+              "title": "HTTP route",
+              "type": "string",
+              "format": "uri",
+              "default": "http://ipaddress/status/",
+              "description": "This must be a path to a JSON format that looks like this, for example:<br />{<br /> &emsp;&quot;temp&quot;: &quot;24.88&quot;,<br />&emsp;&quot;temp2&quot;: &quot;24.06&quot;,<br />&emsp;&quot;temp3&quot;: &quot;23.75&quot;<br />}"
+            },
+            "updateInterval": {
+              "title": "Update interval (seconds)",
+              "type": "integer",
+              "default": "60",
+              "description": "Interval after which the values are updated."
+            },
+            "jsonName": {
+              "title": "Name of your thermometer in JSON",
+              "type": "string",
+              "default": "temp",
+              "description": "This must be the name of the thermometer in JSON format.<br />In the case above it could be temp or temp2 or temp3."
+            },
+            "calibration": {
+                "title": "Calibration (°C)",
+                "type": "number",
+                "placeholder": "0.00",
+                "description": "Only if you need to calibrate your thermometer. It will increase or decrease the value."
+            },
+            "manufacturer": {
+                "title": "Manufacturer",
+                "type": "string",
+                "placeholder": "Manufacturer",
+                "description": "Manufacturer of your thermometer."
+            },
+            "model": {
+                "title": "Model",
+                "type": "string",
+                "placeholder": "Model",
+                "description": "Thermometer model."
+            },
+            "serial": {
+                "title": "Serial number",
+                "type": "string",
+                "placeholder": "serial number",
+                "description": "Serial number of your thermometer."
+            }
+          },
+          "required": [ "thermometerName", "httpRoute", "updateInterval", "jsonName" ]
+        }
       }
     }
   }
