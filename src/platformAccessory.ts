@@ -2,6 +2,8 @@ import { Service, PlatformAccessory, CharacteristicValue } from 'homebridge';
 
 import { ThermometerPlatform } from './platform';
 
+import request from 'request';
+
 /**
  * Platform Accessory
  * An instance of this class is created for each accessory your platform registers
