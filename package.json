@@ -23,7 +23,18 @@
     "prepublishOnly": "npm run lint && npm run build"
   },
   "keywords": [
-    "homebridge-plugin"
+    "homebridge-plugin",
+    "homebridge",
+    "homekit",
+    "http",
+    "json",
+    "thermometer",
+    "temperature-sensor",
+    "smart home",
+    "temperature sensor",
+    "plugin",
+    "temperature-monitoring",
+    "temperature monitoring"
   ],
   "dependencies": {
     "request": "^2.88.2"
