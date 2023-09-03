@@ -94,10 +94,10 @@ You can also have more than one thermometers. Simply click the button <kbd>ADD T
 		},
 		{
 			"thermometerName": "Kitchen thermometer",
-			"httpRoute": "http://ihome.com/temp/",
+			"httpRoute": "http://yourdomain.com/temp/",
 			"updateInterval": 15,
 			"jsonName": "t1",
-			"manufacturer": "ihome.com",
+			"manufacturer": "yourdomain.com",
 			"model": "WIFI_USB",
 			"serial": "S3r14lNumb3r"
 		},
