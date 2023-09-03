@@ -14,7 +14,7 @@
 
   
 
-# HTTP JSON tHermometer
+# HTTP JSON Thermometer
 
   [![npm](https://img.shields.io/npm/v/homebridge-http-json-thermometer.svg)](https://www.npmjs.com/package/homebridge-http-json-thermometer) [![npm](https://img.shields.io/npm/dt/homebridge-http-json-thermometer.svg)](https://www.npmjs.com/package/homebridge-http-json-thermometer) [![GitHub last commit](https://img.shields.io/github/last-commit/Jakubkuba9000/homebridge-http-json-thermometer.svg)](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer) [![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://paypal.me/Jakubkuba9000)
 
