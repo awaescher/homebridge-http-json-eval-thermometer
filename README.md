@@ -14,15 +14,21 @@
 
   
 
-# HTTP JSON thermometer
+# HTTP JSON tHermometer
 
   [![npm](https://img.shields.io/npm/v/homebridge-http-json-thermometer.svg)](https://www.npmjs.com/package/homebridge-http-json-thermometer) [![npm](https://img.shields.io/npm/dt/homebridge-http-json-thermometer.svg)](https://www.npmjs.com/package/homebridge-http-json-thermometer) [![GitHub last commit](https://img.shields.io/github/last-commit/Jakubkuba9000/homebridge-http-json-thermometer.svg)](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer) [![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://paypal.me/Jakubkuba9000)
 
 </span>
 
-  ## Description
+## Description
 
 This [Homebridge](https://github.com/homebridge/homebridge) plugin allows you to integrate web-based thermometers into Apple's HomeKit. By making straightforward HTTP requests, the plugin continuously retrieves temperature data from your thermometer.
+
+## Compatibility
+
+Probably any web-based thermometer that supports displaying values in JSON over HTTP. <br/>
+Personally tested on thermometers from the manufacturer [Brrr.cz](https://brrr.cz). <br/>
+[![brrr](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer/blob/main/images/brrr.png)](https://brrr.cz)
 
 
 ## Installation
@@ -88,10 +94,10 @@ You can also have more than one thermometers. Simply click the button <kbd>ADD T
 		},
 		{
 			"thermometerName": "Kitchen thermometer",
-			"httpRoute": "http://ihome.com/temp/",
+			"httpRoute": "http://yourdomain.com/temp/",
 			"updateInterval": 15,
 			"jsonName": "t1",
-			"manufacturer": "ihome.com",
+			"manufacturer": "yourdomain.com",
 			"model": "WIFI_USB",
 			"serial": "S3r14lNumb3r"
 		},
@@ -105,9 +111,14 @@ You can also have more than one thermometers. Simply click the button <kbd>ADD T
 }
 ```
 
+## HomeKit limitations
+
+Unfortunately, HomeKit has the limitation that it rounds values to 0.5 °C. This can be solved by downloading the free [Eve](https://apps.apple.com/us/app/eve-for-matter-homekit/id917695792) app or another similar app. These applications usually show a value accurate to one decimal place.
+
 
 ## Credits
 
+- [Brrr.cz](https://brrr.cz)
 - [Getting Started with Homebridge Plugin Development](https://youtu.be/cptIm2naxs4?si=99_ukhch63nWhbb5)
 - [Homebridge API](https://developers.homebridge.io/#/)
 - [homebridge-http-thermometer](https://github.com/phenotypic/homebridge-http-thermometer)
