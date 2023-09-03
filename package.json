@@ -1,5 +1,5 @@
 {
-  "displayName": "HTTP JSON tHermometer",
+  "displayName": "HTTP JSON Thermometer",
   "name": "homebridge-http-json-thermometer",
   "version": "1.0.2",
   "description": "Homebridge plugin designed for a web-based thermometer.",
