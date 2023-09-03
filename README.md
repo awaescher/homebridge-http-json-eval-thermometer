@@ -111,6 +111,10 @@ You can also have more than one thermometers. Simply click the button <kbd>ADD T
 }
 ```
 
+## HomeKit limitations
+
+Unfortunately, HomeKit has the limitation that it rounds values to 0.5 °C. This can be solved by downloading the free [Eve](https://apps.apple.com/us/app/eve-for-matter-homekit/id917695792) app or another similar app. These applications usually show a value accurate to one decimal place.
+
 
 ## Credits
 
