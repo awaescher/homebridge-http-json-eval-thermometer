@@ -20,9 +20,15 @@
 
 </span>
 
-  ## Description
+## Description
 
 This [Homebridge](https://github.com/homebridge/homebridge) plugin allows you to integrate web-based thermometers into Apple's HomeKit. By making straightforward HTTP requests, the plugin continuously retrieves temperature data from your thermometer.
+
+## Compatibility
+
+Probably any web-based thermometer that supports displaying values in JSON over HTTP. <br/>
+Personally tested on thermometers from the manufacturer [Brrr.cz](https://brrr.cz). <br/>
+[![brrr](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer/blob/main/images/brrr.png)](https://brrr.cz)
 
 
 ## Installation
@@ -108,6 +114,7 @@ You can also have more than one thermometers. Simply click the button <kbd>ADD T
 
 ## Credits
 
+- [Brrr.cz](https://brrr.cz)
 - [Getting Started with Homebridge Plugin Development](https://youtu.be/cptIm2naxs4?si=99_ukhch63nWhbb5)
 - [Homebridge API](https://developers.homebridge.io/#/)
 - [homebridge-http-thermometer](https://github.com/phenotypic/homebridge-http-thermometer)
