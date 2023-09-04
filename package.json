@@ -11,6 +11,10 @@
   "bugs": {
     "url": "https://github.com/Jakubkuba9000/homebridge-http-json-thermometer/issues"
   },
+  "funding": {
+    "type" : "paypal",
+    "url" : "https://paypal.me/Jakubkuba9000"
+  },
   "engines": {
     "node": "^18.15.0",
     "homebridge": "^1.6.0"
