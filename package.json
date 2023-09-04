@@ -1,7 +1,7 @@
 {
   "displayName": "HTTP JSON Thermometer",
   "name": "homebridge-http-json-thermometer",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Homebridge plugin designed for a web-based thermometer.",
   "license": "Apache-2.0",
   "repository": {
@@ -12,8 +12,8 @@
     "url": "https://github.com/Jakubkuba9000/homebridge-http-json-thermometer/issues"
   },
   "funding": {
-    "type" : "paypal",
-    "url" : "https://paypal.me/Jakubkuba9000"
+    "type": "paypal",
+    "url": "https://paypal.me/Jakubkuba9000"
   },
   "engines": {
     "node": "^18.15.0",
