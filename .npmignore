@@ -3,6 +3,9 @@ src
 
 # ------------- Defaults ------------- #
 
+# images
+.images
+
 # gitHub actions
 .github
 
