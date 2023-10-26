@@ -2,7 +2,7 @@
 
   
 
-<img  src="https://github.com/homebridge/branding/raw/master/logos/homebridge-wordmark-logo-vertical.png"  width="150">
+<a href="https://homebridge.io/"><img  src="https://github.com/Jakubkuba9000/homebridge-http-json-thermometer/blob/main/images/homebridge-logo.png"  width="150"></a>
 
   
 
@@ -77,7 +77,7 @@ Personally tested on thermometers from the manufacturer [Brrr.cz](https://brrr.c
 | `serial` | Serial number of your thermometer. | `Default-Serial` |
 
 ### More thermometers
-You can also have more than one thermometers. Simply click the button <kbd>ADD TO THERMOMETERS</kbd> in UI or add it manually like this:
+You can also have more than one thermometer. Simply click the button <kbd>ADD TO THERMOMETERS</kbd> in UI or add it manually like this:
 ```json
 {
 	"platform": "HttpJsonThermometer",
