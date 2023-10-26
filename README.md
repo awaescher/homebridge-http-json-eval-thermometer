@@ -1,4 +1,4 @@
-<p  align="center">
+<div  align="center">
 
   
 
@@ -6,13 +6,11 @@
 
   
 
-</p>
+</div>
 
   
 
 <span  align="center">
-
-  
 
 # HTTP JSON Thermometer
 
