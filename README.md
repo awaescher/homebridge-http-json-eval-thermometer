@@ -35,7 +35,33 @@ This is a fork of the [http-json-thermometer by Jakubkuba9000](https://github.co
 		}
 	]
 }
+
 ```
+
+### Example
+
+For a simple json object, defining the first property name is enough.
+
+```json
+{
+  "tC": 22.94,                // path is "tC"
+  "tF": 73.29                 // path is "tF"
+}
+```
+
+For complex json objects, the js dot notation can be used as path:
+
+```json
+{
+  "ext_temperature": {
+    "0": {
+      "tC": 22.94,                // path is "ext_temperature[0].tC"
+      "tF": 73.29                 // path is "ext_temperature[0].tF"
+    }
+  }
+}
+```
+
 
 ### Core
 | Key | Description | Default |

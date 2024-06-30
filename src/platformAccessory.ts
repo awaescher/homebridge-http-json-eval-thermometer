@@ -27,7 +27,7 @@ export class ThermometerPlatformAccessory {
 
     // get the TemperatureSensor service if it exists, otherwise create a new TemperatureSensor service
     this.service = this.accessory.getService(this.platform.Service.TemperatureSensor) ||
-    this.accessory.addService(this.platform.Service.TemperatureSensor);
+      this.accessory.addService(this.platform.Service.TemperatureSensor);
 
     // this is what is displayed as the default name on the Home app
     this.service.setCharacteristic(this.platform.Characteristic.Name, accessory.context.device.thermometerName);
@@ -46,7 +46,17 @@ export class ThermometerPlatformAccessory {
    * Handle the "GET" requests from HomeKit
    * These are sent when HomeKit wants to know the current state of the accessory.
    */
-  async httpRequest(url: string, thermometer: string, calibration: number) {
+  async httpRequest(url: string, path: string, calibration: number) {
+
+    // only allow chars, numbers, minuses, underscores and square brackets
+    // that should be enough to navigate through a json tree
+    const validPathPattern = /^[a-zA-Z0-9._\-[\]]+$/;
+
+    if (!validPathPattern.test(path)) {
+      this.platform.log.error('Invalid path. Only chars, numbers, minuses, underscores and square brackets are allowed.', path);
+      return;
+    }
+
     request(url, (error, response, body) => {
       if (error) {
         this.platform.log.warn('Error getting status:', error.message);
@@ -54,8 +64,9 @@ export class ThermometerPlatformAccessory {
       } else {
         this.platform.log.debug('Device response:', body);
         try {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const json = JSON.parse(body);
-          const ev = eval(json + '.' + thermometer); // i.e. "ext_temperature[0].tC" for a dsb18b20 on an Shelly Uni at /status
+          const ev = eval('json.' + path); // i.e. "ext_temperature[0].tC" for a dsb18b20 on an Shelly Uni at /status
           const temperature = (parseFloat(ev) + calibration).toFixed(2);
           this.service.getCharacteristic(this.platform.Characteristic.CurrentTemperature).updateValue(temperature);
           this.platform.log.info('Current temperature in', this.accessory.context.device.thermometerName, 'updated to', temperature);
