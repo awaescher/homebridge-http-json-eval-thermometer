@@ -1,38 +1,18 @@
-<div  align="center">
+<p align="center">
 
-  
+<img src="https://github.com/homebridge/branding/raw/latest/logos/homebridge-wordmark-logo-vertical.png" width="150">
 
-<a href="https://homebridge.io/"><img  src="https://github.com/Jakubkuba9000/homebridge-http-json-thermometer/blob/main/images/homebridge-logo.png"  width="150"></a>
+</p>
 
-  
+# JSON Thermometer
 
-</div>
-
-  
-
-<span  align="center">
-
-# HTTP JSON Thermometer
-
-[![npm](https://img.shields.io/npm/v/homebridge-http-json-thermometer.svg)](https://www.npmjs.com/package/homebridge-http-json-thermometer) [![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins) [![npm](https://img.shields.io/npm/dt/homebridge-http-json-thermometer.svg)](https://www.npmjs.com/package/homebridge-http-json-thermometer) [![GitHub last commit](https://img.shields.io/github/last-commit/Jakubkuba9000/homebridge-http-json-thermometer.svg)](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer) [![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://paypal.me/Jakubkuba9000)
-
-</span>
-
-## Description
-
-This [Homebridge](https://github.com/homebridge/homebridge) plugin allows you to integrate web-based thermometers into Apple's HomeKit. By making straightforward HTTP requests, the plugin continuously retrieves temperature data from your thermometer.
-
-## Compatibility
-
-Probably any web-based thermometer that supports displaying values in JSON over HTTP. <br/>
-Personally tested on thermometers from the manufacturer [Brrr.cz](https://brrr.cz). <br/>
-[![brrr](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer/blob/main/images/brrr.png)](https://brrr.cz)
+This is a fork of the [http-json-thermometer by Jakubkuba9000](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer) that allows complex json objects to be parsed.
 
 
 ## Installation
 
 1. Install [Homebridge](https://github.com/homebridge/homebridge#installation).
-2. Install this plugin: `npm install -g homebridge-http-json-thermometer` or through Homebridge UI by clicking the <kbd>INSTALL</kbd> buttton.
+2. Install this plugin: `npm install -g homebridge-json-thermometer` or through Homebridge UI by clicking the <kbd>INSTALL</kbd> buttton.
 3. Update your `config.json` file by clicking the <kbd>SETTINGS</kbd> button through Homebridge UI or manually. See the explanations and samples below.
 
 
@@ -116,7 +96,7 @@ Unfortunately, HomeKit has the limitation that it rounds values to 0.5 °C. This
 
 ## Credits
 
-- [Brrr.cz](https://brrr.cz)
+- [http-json-thermometer by Jakubkuba9000](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer)
 - [Getting Started with Homebridge Plugin Development](https://youtu.be/cptIm2naxs4?si=99_ukhch63nWhbb5)
 - [Homebridge API](https://developers.homebridge.io/#/)
 - [homebridge-http-thermometer](https://github.com/phenotypic/homebridge-http-thermometer)

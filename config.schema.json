@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "HttpJsonEvalThermometer",
+  "pluginAlias": "JsonThermometer",
   "pluginType": "platform",
   "singular": false,
   "headerDisplay": "Thermometers are exposed to HomeKit as separate accessories.",
