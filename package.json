@@ -1,15 +1,15 @@
 {
-  "displayName": "HTTP JSON Thermometer",
-  "name": "homebridge-http-json-thermometer",
+  "displayName": "HTTP JSON Eval Thermometer",
+  "name": "homebridge-http-json-eval-thermometer",
   "version": "1.1.2",
-  "description": "Homebridge plugin designed for a web-based thermometer.",
+  "description": "Homebridge plugin designed for a web-based thermometer with eval() support.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jakubkuba9000/homebridge-http-json-thermometer.git"
+    "url": "https://github.com/awaescher/homebridge-http-json-eval-thermometer.git"
   },
   "bugs": {
-    "url": "https://github.com/Jakubkuba9000/homebridge-http-json-thermometer/issues"
+    "url": "https://github.com/awaescher/homebridge-http-json-eval-thermometer/issues"
   },
   "funding": {
     "type": "paypal",
