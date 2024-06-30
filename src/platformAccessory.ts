@@ -55,7 +55,8 @@ export class ThermometerPlatformAccessory {
         this.platform.log.debug('Device response:', body);
         try {
           const json = JSON.parse(body);
-          const ev = eval("json." + thermometer) // i.e. "ext_temperature[0].tC" for a dsb18b20 on an Shelly Uni at /status
+          console.log(json);
+          const ev = eval('json.' + thermometer); // i.e. "ext_temperature[0].tC" for a dsb18b20 on an Shelly Uni at /status
           const temperature = (parseFloat(ev) + calibration).toFixed(2);
           this.service.getCharacteristic(this.platform.Characteristic.CurrentTemperature).updateValue(temperature);
           this.platform.log.info('Current temperature in', this.accessory.context.device.thermometerName, 'updated to', temperature);
