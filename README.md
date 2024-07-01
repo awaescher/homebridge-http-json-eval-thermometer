@@ -21,21 +21,19 @@ This is a fork of the [http-json-thermometer by Jakubkuba9000](https://github.co
 ### Configuration example
 ```json
 {
-	"platform": "HttpJsonThermometer",
-	"thermometers": [
-		{
-			"thermometerName": "Terrarium thermometer",
-			"httpRoute": "http://ipaddress/status/",
-			"updateInterval": 60,
-			"jsonPath": "temp",
-			"calibration": 0.16,
-			"minValue": 900,
-			"maxValue": 900,
-			"manufacturer": "Default-Manufacturer",
-			"model": "Default-Model",
-			"serial": "Default-Serial"
-		}
-	]
+  "platform": "HttpJsonThermometer",
+  "thermometers": [ {
+    "thermometerName": "Terrarium thermometer",
+    "httpRoute": "http://ipaddress/status/",
+    "updateInterval": 60,
+    "jsonPath": "temp",
+    "calibration": 0.16,
+    "minValue": -900,
+    "maxValue": 900,
+    "manufacturer": "Default-Manufacturer",
+    "model": "Default-Model",
+    "serial": "Default-Serial"
+    } ]
 }
 
 ```
