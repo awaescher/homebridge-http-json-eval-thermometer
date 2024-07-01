@@ -31,38 +31,55 @@
               "default": "60",
               "description": "Interval after which the values are updated."
             },
-            "jsonName": {
-              "title": "Name of your thermometer in JSON",
+            "jsonPath": {
+              "title": "The path to find the desired value in a JSON response",
               "type": "string",
               "default": "temp",
-              "description": "This must be the name of the thermometer in JSON format.<br />In the case above it could be temp or temp2 or temp3."
+              "description": "This must be the path of the response value in a JSON response.<br />In the case above it could be temp or temp2 or temp3."
             },
             "calibration": {
-                "title": "Calibration (°C)",
-                "type": "number",
-                "placeholder": "0.00",
-                "description": "Only if you need to calibrate your thermometer. It will increase or decrease the value."
+              "title": "Calibration (°C)",
+              "type": "number",
+              "placeholder": "0.00",
+              "description": "Only if you need to calibrate your thermometer. It will increase or decrease the value."
+            },
+            "minValue": {
+              "title": "The minimum value that should be reported.",
+              "type": "number",
+              "default": "-500",
+              "description": "Smaller numbers are ignored. Might be helpful to filter out noisy default values."
+            },
+            "maxValue": {
+              "title": "The maximum value that should be reported.",
+              "type": "number",
+              "default": "500",
+              "description": "Larger numbers are ignored. Might be helpful to filter out noisy default values like occasional 999°C from DS18B20 sensors on a Shelly Uni."
             },
             "manufacturer": {
-                "title": "Manufacturer",
-                "type": "string",
-                "placeholder": "Manufacturer",
-                "description": "Manufacturer of your thermometer."
+              "title": "Manufacturer",
+              "type": "string",
+              "placeholder": "Manufacturer",
+              "description": "Manufacturer of your thermometer."
             },
             "model": {
-                "title": "Model",
-                "type": "string",
-                "placeholder": "Model",
-                "description": "Thermometer model."
+              "title": "Model",
+              "type": "string",
+              "placeholder": "Model",
+              "description": "Thermometer model."
             },
             "serial": {
-                "title": "Serial number",
-                "type": "string",
-                "placeholder": "serial number",
-                "description": "Serial number of your thermometer."
+              "title": "Serial number",
+              "type": "string",
+              "placeholder": "serial number",
+              "description": "Serial number of your thermometer."
             }
           },
-          "required": [ "thermometerName", "httpRoute", "updateInterval", "jsonName" ]
+          "required": [
+            "thermometerName",
+            "httpRoute",
+            "updateInterval",
+            "jsonPath"
+          ]
         }
       }
     }

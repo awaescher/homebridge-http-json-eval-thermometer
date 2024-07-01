@@ -27,8 +27,10 @@ This is a fork of the [http-json-thermometer by Jakubkuba9000](https://github.co
 			"thermometerName": "Terrarium thermometer",
 			"httpRoute": "http://ipaddress/status/",
 			"updateInterval": 60,
-			"jsonName": "temp",
+			"jsonPath": "temp",
 			"calibration": 0.16,
+			"minValue": 900,
+			"maxValue": 900,
 			"manufacturer": "Default-Manufacturer",
 			"model": "Default-Model",
 			"serial": "Default-Serial"
@@ -38,9 +40,9 @@ This is a fork of the [http-json-thermometer by Jakubkuba9000](https://github.co
 
 ```
 
-### Example
+### Examples
 
-For a simple json object, defining the first property name is enough.
+For a simple json object, defining the first property name is enough. 
 
 ```json
 {
@@ -70,7 +72,7 @@ For complex json objects, the js dot notation can be used as path:
 | `thermometerName` | This will be the name of your thermometer that appears in the Home app. This must be unique. | `Terrarium thermometer` |
 | `httpRoute` | This must be a path to a JSON format that looks like this, for example:<br />{<br /> &emsp;&quot;temp&quot;: &quot;24.88&quot;,<br />&emsp;&quot;temp2&quot;: &quot;24.06&quot;,<br />&emsp;&quot;temp3&quot;: &quot;23.75&quot;<br />} | `http://ipaddress/status/` |
 | `updateInterval` | Interval after which the values are updated. | `60` |
-| `jsonName` | This must be the name of the thermometer in JSON format.<br />In the case above it could be <strong>temp</strong> or <strong>temp2</strong> or <strong>temp3</strong>. | `temp` |
+| `jsonPath` | This must be the path of the response value in a JSON response.<br />In the case above it could be <strong>temp</strong> or <strong>temp2</strong> or <strong>temp3</strong>. | `temp` |
 
 ### Additional options
 | Key | Description | Default |
@@ -90,7 +92,7 @@ You can also have more than one thermometer. Simply click the button <kbd>ADD TO
 			"thermometerName": "Terrarium thermometer",
 			"httpRoute": "http://ipaddress/status/",
 			"updateInterval": 60,
-			"jsonName": "temp",
+			"jsonPath": "temp",
 			"calibration": 0.16,
 			"manufacturer": "Default-Manufacturer",
 			"model": "Default-Model",
@@ -100,7 +102,7 @@ You can also have more than one thermometer. Simply click the button <kbd>ADD TO
 			"thermometerName": "Kitchen thermometer",
 			"httpRoute": "http://yourdomain.com/temp/",
 			"updateInterval": 15,
-			"jsonName": "t1",
+			"jsonPath": "t1",
 			"manufacturer": "yourdomain.com",
 			"model": "WIFI_USB",
 			"serial": "S3r14lNumb3r"
@@ -109,7 +111,7 @@ You can also have more than one thermometer. Simply click the button <kbd>ADD TO
 			"thermometerName": "Bathroom thermometer",
 			"httpRoute": "http://192.168.1.155/temperature/",
 			"updateInterval": 120,
-			"jsonName": "temperature"
+			"jsonPath": "temperature"
 		}
 	]
 }

@@ -17,7 +17,12 @@ export class ThermometerPlatformAccessory {
   ) {
 
     // requesting and updating values
-    this.httpRequest(accessory.context.device.httpRoute, accessory.context.device.jsonName, accessory.context.device.calibration || 0);
+    this.httpRequest(
+      accessory.context.device.httpRoute,
+      accessory.context.device.jsonPath,
+      accessory.context.device.calibration || 0,
+      accessory.context.device.minValue,
+      accessory.context.device.maxValue);
 
     // set accessory information
     this.accessory.getService(this.platform.Service.AccessoryInformation)!
@@ -37,7 +42,7 @@ export class ThermometerPlatformAccessory {
      * Here we update the temperature sensor values.
      */
     setInterval(() => {
-      this.httpRequest(accessory.context.device.httpRoute, accessory.context.device.jsonName, accessory.context.device.calibration || 0);
+      this.httpRequest(accessory.context.device.httpRoute, accessory.context.device.jsonPath, accessory.context.device.calibration || 0);
       this.platform.log.debug('Interval update:', accessory.context.device.updateInterval);
     }, accessory.context.device.updateInterval * 1000);
   }
@@ -46,7 +51,7 @@ export class ThermometerPlatformAccessory {
    * Handle the "GET" requests from HomeKit
    * These are sent when HomeKit wants to know the current state of the accessory.
    */
-  async httpRequest(url: string, path: string, calibration: number) {
+  async httpRequest(url: string, path: string, calibration: number, minValue: number, maxValue: number) {
 
     // only allow chars, numbers, minuses, underscores and square brackets
     // that should be enough to navigate through a json tree
@@ -66,10 +71,17 @@ export class ThermometerPlatformAccessory {
         try {
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const json = JSON.parse(body);
-          const ev = eval('json.' + path); // i.e. "ext_temperature[0].tC" for a dsb18b20 on an Shelly Uni at /status
-          const temperature = (parseFloat(ev) + calibration).toFixed(2);
-          this.service.getCharacteristic(this.platform.Characteristic.CurrentTemperature).updateValue(temperature);
-          this.platform.log.info('Current temperature in', this.accessory.context.device.thermometerName, 'updated to', temperature);
+          const evaluatedPath = eval('json.' + path); // i.e. "ext_temperature[0].tC" for a dsb18b20 on an Shelly Uni at /status
+          let temperature = parseFloat(evaluatedPath);
+          const isValid = temperature >= minValue && temperature <= maxValue;
+          if (isValid) {
+            temperature += calibration;
+            this.service.getCharacteristic(this.platform.Characteristic.CurrentTemperature).updateValue(temperature.toFixed(2));
+            this.platform.log.info('Current temperature in', this.accessory.context.device.thermometerName, 'updated to', temperature);
+          } else {
+            this.platform.log.warn('Current temperature in', this.accessory.context.device.thermometerName,
+              'is invalid:', temperature, 'min:', minValue, 'max:', maxValue);
+          }
         } catch (parseError) {
           this.platform.log.warn('Error parsing status:', parseError);
         }
