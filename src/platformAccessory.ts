@@ -47,7 +47,7 @@ export class ThermometerPlatformAccessory {
         accessory.context.device.jsonPath,
         accessory.context.device.calibration || 0,
         accessory.context.device.minValue,
-        accessory.context.device.maxvalule);
+        accessory.context.device.maxValue);
 
       this.platform.log.debug('Interval update:', accessory.context.device.updateInterval);
     }, accessory.context.device.updateInterval * 1000);
@@ -86,7 +86,7 @@ export class ThermometerPlatformAccessory {
             this.platform.log.info('Current temperature in', this.accessory.context.device.thermometerName, 'updated to', temperature);
           } else {
             this.platform.log.warn('Current temperature in', this.accessory.context.device.thermometerName,
-              'is invalid:', temperature, 'min:', minValue, 'max:', maxValue);
+              'is invalid:', temperature, '(min:', minValue, 'max:', maxValue, ')');
           }
         } catch (parseError) {
           this.platform.log.warn('Error parsing status:', parseError);

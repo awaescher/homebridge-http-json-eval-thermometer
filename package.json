@@ -1,5 +1,5 @@
 {
-  "displayName": "Homebridge JSON Thermometer",
+  "displayName": "Homebridge Json Thermometer",
   "name": "homebridge-json-thermometer",
   "version": "2.3.0",
   "description": "Homebridge plugin designed for a web-based thermometer with support for complex json objects.",
