@@ -42,7 +42,13 @@ export class ThermometerPlatformAccessory {
      * Here we update the temperature sensor values.
      */
     setInterval(() => {
-      this.httpRequest(accessory.context.device.httpRoute, accessory.context.device.jsonPath, accessory.context.device.calibration || 0);
+      this.httpRequest(
+        accessory.context.device.httpRoute,
+        accessory.context.device.jsonPath,
+        accessory.context.device.calibration || 0,
+        accessory.context.device.minValue,
+        accessory.context.device.maxvalule);
+
       this.platform.log.debug('Interval update:', accessory.context.device.updateInterval);
     }, accessory.context.device.updateInterval * 1000);
   }
