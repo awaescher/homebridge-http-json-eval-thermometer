@@ -4,9 +4,11 @@
 
 </p>
 
-# JSON Thermometer
+# Homebridge Json Thermometer
 
-This is a fork of the [http-json-thermometer by Jakubkuba9000](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer) that allows complex json objects to be parsed.
+This is a fork of the [http-json-thermometer by Jakubkuba9000](https://github.com/Jakubkuba9000/homebridge-http-json-thermometer) that allows:
+ - complex json objects to be parsed
+ - minimum and maximum values per thermostat to filter out noisy default values like occasional 999°C from DS18B20 sensors on a Shelly Uni
 
 
 ## Installation

@@ -83,7 +83,7 @@ export class ThermometerPlatformAccessory {
           if (isValid) {
             temperature += calibration;
             this.service.getCharacteristic(this.platform.Characteristic.CurrentTemperature).updateValue(temperature.toFixed(2));
-            this.platform.log.info('Current temperature in', this.accessory.context.device.thermometerName, 'updated to', temperature);
+            this.platform.log.debug('Current temperature in', this.accessory.context.device.thermometerName, 'updated to', temperature);
           } else {
             this.platform.log.warn('Current temperature in', this.accessory.context.device.thermometerName,
               'is invalid:', temperature, '(min:', minValue, 'max:', maxValue, ')');
